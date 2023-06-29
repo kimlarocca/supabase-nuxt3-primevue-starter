@@ -1,0 +1,34 @@
+select {
+  width: 100%;
+  @media all and (min-width: $large) {
+    min-width: 200px;
+    width: fit-content;
+    max-width: 100%;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media all and (min-width: $large) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.filters select {
+  max-width: 250px;
+}
+
+.filters label {
+  margin-bottom: var(--space-4);
+  @media all and (min-width: $large) {
+    margin: 0 var(--space-4) 0 0;
+  }
+}
+
+.clear-filters {
+  height: var(--forms-input-height);
+  line-height: 2.25rem;
+}

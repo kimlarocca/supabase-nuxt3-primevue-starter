@@ -1,0 +1,22 @@
+{
+  "name": "supabase",
+  "scripts": {
+    "build": "nuxt generate",
+    "dev": "nuxt dev --port 3000",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/supabase": "^0.3.5",
+    "nuxt": "^3.3.3",
+    "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.2.3",
+    "primeflex": "^3.3.0",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.20.0",
+    "vue3-apexcharts": "^1.4.1"
+  }
+}

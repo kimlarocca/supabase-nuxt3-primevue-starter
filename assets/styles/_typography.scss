@@ -1,0 +1,109 @@
+@mixin typeface($type, $size) {
+  font-family: var(--font-family-#{$type});
+  letter-spacing: 1;
+  font-weight: var(--font-weight-#{$type});
+  line-height: var(--line-height-#{$size});
+  font-size: var(--font-size-#{$size});
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+h1,
+.like-h1 {
+  @include typeface(header, 12);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  @media all and (min-width: $medium) {
+    @include typeface(header, 16);
+    font-weight: 400;
+  }
+}
+
+h2,
+.like-h2 {
+  @include typeface(primary, 10);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  @media all and (min-width: $medium) {
+    @include typeface(primary, 15);
+    font-weight: 300;
+    line-height: 65px;
+  }
+}
+
+h3,
+.like-h3 {
+  @include typeface(primary, 8);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  @media all and (min-width: $medium) {
+    @include typeface(primary, 11);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+}
+
+h4,
+.like-h4 {
+  @include typeface(primary, 8);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  @media all and (min-width: $medium) {
+    @include typeface(primary, 11);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+}
+
+h5,
+.like-h5 {
+  @include typeface(primary, 5);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-bottom: 0.125rem solid var(--black);
+  text-transform: uppercase;
+  @media all and (min-width: $medium) {
+    @include typeface(primary, 8);
+    font-weight: 500;
+  }
+}
+
+h6,
+.like-h6 {
+  @include typeface(primary, 5);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  @media all and (min-width: $medium) {
+    @include typeface(primary, 8);
+    font-weight: 300;
+  }
+}
+
+p,
+.like-p,
+.storyblok-rich-text,
+.storyblok-rich-text i,
+li {
+  @include typeface(primary, 5);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  @media all and (min-width: $medium) {
+    @include typeface(primary, 6);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+}
+
+p.small {
+  font-size: var(--font-size-4);
+}

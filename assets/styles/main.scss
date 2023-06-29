@@ -1,0 +1,57 @@
+@import 'theme';
+@import 'primevue/resources/primevue.min.css';
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.css';
+
+@import 'typography';
+@import 'forms';
+@import 'buttons';
+
+html,
+body {
+  font-weight: 300;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// links
+
+a,
+a:visited,
+a:active {
+  text-decoration: underline;
+  color: var(--color-link);
+  transition: var(--transition);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+  &.plain {
+    text-decoration: none;
+    &:hover {
+      color: var(--color-link);
+      background-color: transparent;
+    }
+  }
+}
+
+.clickable {
+  cursor: pointer;
+  opacity: 1;
+  transition: var(--transition);
+  &:hover {
+    opacity: var(--opacity-on-hover);
+  }
+}
+
+.container {
+  max-width: 1240px;
+  margin: auto;
+}
