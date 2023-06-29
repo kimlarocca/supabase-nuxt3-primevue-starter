@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { useCurrentUser } from '~/composables/states'
+import { useCurrentUser, useCurrentUserProfile } from '~/composables/states'
 
 definePageMeta({
   layout: 'blank',
@@ -24,6 +24,10 @@ if (error) {
 // set the currentUser composable to null
 const currentUser = useCurrentUser()
 currentUser.value = null
+
+// set the currentUserProfile composable to null
+const currentUserProfile = useCurrentUserProfile()
+currentUserProfile.value = null
 
 // delete access and refresh token cookies
 document.cookie =
