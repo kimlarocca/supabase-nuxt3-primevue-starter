@@ -29,12 +29,6 @@ currentUser.value = null
 const currentUserProfile = useCurrentUserProfile()
 currentUserProfile.value = null
 
-// delete access and refresh token cookies
-document.cookie =
-  'equal-time-access-token=; Max-Age=0; path=/; domain=' + location.hostname
-document.cookie =
-  'equal-time-refresh-token=; Max-Age=0; path=/; domain=' + location.hostname
-
 // clear localStorage
 localStorage.clear()
 </script>

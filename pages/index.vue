@@ -26,21 +26,21 @@ definePageMeta({
   layout: 'blank',
 })
 
-// check the dev environment for the auth token
-const supabaseAuthTokenDev = JSON.parse(
+// check local storage for the auth token
+const supabaseAuthToken = JSON.parse(
   window.localStorage.getItem(config.supabaseAuthTokenName)
 )
-if (supabaseAuthTokenDev) {
-  currentUser.value = supabaseAuthTokenDev.user
+if (supabaseAuthToken) {
+  currentUser.value = supabaseAuthToken.user
 }
 
-// TO DO
-// check the prod environment for the auth token
-//
-
-// check if the user is logged in
+// check supabase session for logged in user
 if (user?.data?.session?.user) {
   currentUser.value = user?.data?.session?.user
+}
+
+// redirect to dashboard if the user is logged in
+if (currentUser.value) {
   // for some reason, navigateTo doesn't work here?!
   window.location.href = '/dashboard'
 }
@@ -51,6 +51,10 @@ setTimeout(() => {
   // check if the user is logged in
   if (user?.data?.session?.user) {
     currentUser.value = user?.data?.session?.user
+  }
+  // redirect to dashboard if the user is logged in
+  if (currentUser.value) {
+    console.log('currentUser setTimeout found', currentUser.value)
     // for some reason, navigateTo doesn't work here?!
     window.location.href = '/dashboard'
   }

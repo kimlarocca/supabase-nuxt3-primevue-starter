@@ -3,11 +3,12 @@ import {
   useCurrentUserProfile
 } from '~/composables/states'
 
-export default defineNuxtRouteMiddleware( ( to, from ) => {
+export default defineNuxtRouteMiddleware( async ( to, from ) => {
   const currentUser = useCurrentUser()
   const currentUserProfile = useCurrentUserProfile()
   const config = useRuntimeConfig()
   const client = useSupabaseClient()
+  const user = await client.auth.getSession()
 
   // function that gets a user profile
   const getProfile = async () => {
@@ -26,17 +27,18 @@ export default defineNuxtRouteMiddleware( ( to, from ) => {
     }
   }
 
-  // check the dev environment for the auth token
-  const supabaseAuthTokenDev = JSON.parse(
+  // check local storage for the auth token
+  const supabaseAuthToken = JSON.parse(
     window.localStorage.getItem( config.supabaseAuthTokenName )
   )
-  if ( supabaseAuthTokenDev ) {
-    currentUser.value = supabaseAuthTokenDev.user
+  if ( supabaseAuthToken ) {
+    currentUser.value = supabaseAuthToken.user
   }
 
-  // TO DO
-  // check the prod environment for the auth token
-  //
+  // check supabase session for logged in user
+  if ( user?.data?.session?.user ) {
+    currentUser.value = user?.data?.session?.user
+  }
 
   // if the user is not authorized, redirect them to the login page
   // if they are, get their profile data
