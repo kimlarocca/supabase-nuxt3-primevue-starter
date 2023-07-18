@@ -1,6 +1,7 @@
 <template>
   <div class="text-center">
-    <div class="w-4 mb-4 m-auto">
+    <logo-bar class="mb-6" />
+    <div class="lg:w-4 mb-4 m-auto">
       <supabase-login-with-google class="mb-3" />
       <Divider align="center">
         <b>Or</b>

@@ -11,7 +11,7 @@
         type="password"
         placeholder="New Password"
         required
-        class="w-4 mb-3"
+        class="lg:w-4 mb-3"
       />
       <Button v-if="!successMessage" :loading="pending" type="submit">
         Save New Password

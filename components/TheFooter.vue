@@ -1,7 +1,7 @@
 <template>
   <footer class="text-center">
     <Divider class="my-7" />
-    <div class="flex justify-content-between">
+    <div class="flex justify-content-between flex-column lg:flex-row">
       <p class="mb-5 uppercase font-bold">
         <a
           href="https://www.wnyc.org/privacy/"

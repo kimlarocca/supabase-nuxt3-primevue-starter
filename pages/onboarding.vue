@@ -1,7 +1,7 @@
 <template>
   <div class="text-center">
     <h1 class="mb-4">Create your account</h1>
-    <div class="w-4 mb-6 m-auto">
+    <div class="lg:w-4 mb-6 m-auto">
       <supabase-login-with-google
         label="create account with google"
         class="mb-3"

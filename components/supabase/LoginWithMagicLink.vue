@@ -11,7 +11,7 @@
         {{ successMessage }}
       </Message>
     </template>
-    <form @submit.prevent="login" class="w-4 m-auto">
+    <form @submit.prevent="login" class="lg:w-4 m-auto">
       <input
         v-model="email"
         class="w-full mb-2"

@@ -1,5 +1,5 @@
 <template>
-  <div class="p-3 container">
+  <div class="p-4 container">
     <header class="text-center mb-6">
       <nuxt-link to="/" class="plain">
         <img
